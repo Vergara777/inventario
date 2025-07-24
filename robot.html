@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robot Prueba</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #121212;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .robot-flotante {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 100px;
+      z-index: 1000;
+    }
+    .robot-flotante img {
+      width: 100%;
+      transition: transform 0.2s ease;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="robot-flotante">
+  <img id="robot" src="https://cdn-icons-png.flaticon.com/512/4712/4712107.png" alt="Asistente">
+</div>
+
+<script>
+document.addEventListener("mousemove", function(e) {
+  const robot = document.getElementById('robot');
+  if (!robot) return;
+
+  const rect = robot.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  const offsetX = (e.clientX - centerX) / 20;
+  const offsetY = (e.clientY - centerY) / 20;
+
+  robot.style.transform = 'rotateX(' + offsetY + 'deg) rotateY(' + (-offsetX) + 'deg)';
+});
+</script>
+
+</body>
+</html>
+
