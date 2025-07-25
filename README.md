@@ -286,3 +286,4 @@ Para soporte técnico o consultas sobre el sistema, contactar al equipo de desar
 **🎉 Sistema completamente funcional y listo para producción**
 
 **Desarrollado con ❤️ para la gestión eficiente de farmacias modernas** 
+**blablabla**
